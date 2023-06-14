@@ -10,3 +10,8 @@ export const databaseConfiguration: TypeOrmModuleOptions = {
   entities: ['dist/**/*.entity{.ts,.js}'],
   synchronize: true,
 };
+
+export const jwtConfiguration = {
+  secret: process.env.JWT_SECRET,
+  ttl: process.env.JWT_TTL,
+};
