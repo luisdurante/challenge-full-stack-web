@@ -1,0 +1,11 @@
+.docker/
+.git/
+
+dist/
+node_modules/
+coverage/
+mockups/
+
+docker-compose.yml
+Dockerfile.prod
+Dockerfile.dev
