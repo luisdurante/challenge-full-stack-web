@@ -10,12 +10,19 @@ import {
 import { AuthService } from './auth.service';
 import { CreateUserDto } from '../users/dto/create-user.dto';
 import { AuthGuard } from '@nestjs/passport';
+import { ApiBody, ApiTags } from '@nestjs/swagger';
+import { LoginDto } from './dto/login.dto';
 
+@ApiTags('auth')
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @UseGuards(AuthGuard('local'))
+  @ApiBody({
+    description: 'Login data',
+    type: LoginDto,
+  })
   @Post('login')
   @HttpCode(HttpStatus.OK)
   login(@Request() request) {
