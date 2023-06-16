@@ -33,7 +33,7 @@ export class StudentsService {
     }
   }
 
-  async findAll(requestedPage: number, limit: number): Promise<object> {
+  async findAll(requestedPage: number, limit: number): Promise<any> {
     const take = limit || 10;
     const page = requestedPage || 1;
     const skip = (page - 1) * take;
