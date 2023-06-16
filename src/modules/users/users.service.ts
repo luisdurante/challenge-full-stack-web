@@ -20,7 +20,11 @@ export class UsersService {
   async create(createUserDto: CreateUserDto): Promise<User> {
     try {
       const user = this.usersRepository.create(createUserDto);
-      return await this.usersRepository.save(user);
+      const createdUser = await this.usersRepository.save(user);
+
+      delete createdUser['password'];
+
+      return createdUser;
     } catch (error) {
       if (error.code === '23505')
         throw new ConflictException('Email already exists');
