@@ -1,5 +1,57 @@
-+A Educação - Full Stack Web Developer
-===================
+# +A Educação - Full Stack Web Developer
+
+Repositório do front-end: https://github.com/luisdurante/grupo-a-end-test-front
+
+## Sobre a API
+
+A API cadastra e gerencia matrículas de alunos em turmas online.
+
+Para checar a referência da api basta acessar o swagger: localhost/api ou https://grupoa-test-api-rvmt2lyuxa-uc.a.run.app/api
+
+### Como rodar localmente
+
+Para rodar a API localmente com mais facilidade, é recomendada a instalação do _docker_.
+
+- Clone o repositório com o comando `git clone https://github.com/luisdurante/challenge-full-stack-web.git`
+- Instale as dependências com `npm install`
+- Na raiz do projeto, crie um arquivo _**.env**_ com as variáveis necessárias
+- Vamos iniciar os containers com o comando `docker-compose up`
+
+Após isso conseguimos acessar os endpoints locais, (e.g http://localhost:3000/students)
+
+Para rodar os testes, basta digitar:
+
+- `npm run test` para os testes unitários 
+
+## Exemplo de entradas de um arquivo .env
+
+Exemplo de variáveis de ambiente para o arquivo .env
+
+Importante manter os valores:
+
+- DATABASE_USERNAME=testUser
+- DATABASE_PASSWORD=testPassword
+- DATABASE_NAME=grupoa-test
+
+por conta do _docker-compose_, caso queira mudar esses valores não se esqueça de alterar também no _docker-compose.yml_
+
+```text
+DATABASE_TYPE=postgres
+DATABASE_HOST=postgres
+DATABASE_PORT=5432
+DATABASE_USERNAME=testUser
+DATABASE_PASSWORD=testPassword
+DATABASE_NAME=grupoa-test
+
+JWT_SECRET=meusecret
+JWT_TTL=86400s
+
+PORT=3000
+```
+
+
+
+# Descrição do desafio
 
 [![N|Solid](https://maisaedu.com.br/hubfs/site-grupo-a/logo-mais-a-educacao.svg)](https://maisaedu.com.br/) 
 
